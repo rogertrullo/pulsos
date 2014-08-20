@@ -60,7 +60,7 @@ void enviar_0(char * buffer,int longitud)
 
 }
 
-
+////////////////////////////Interrupcion serial//////////////
 ISR(USART0_RX_vect)
 {
 	char dato_recibido=UDR0;
@@ -76,7 +76,12 @@ ISR(USART0_RX_vect)
 			miestado=set_counters;
 		}
 		else if(dato_recibido==READ_FECHA_RTC){
-			DS1307_GetDate(&months,&days,&years);			enviar_fecha(months, days, years);									DS1307_GetTime(&hours,&minutes,&seconds);			enviar_hora(hours, minutes, seconds);
+			DS1307_GetDate(&months,&days,&years);
+			enviar_fecha(months, days, years);
+			
+			
+			DS1307_GetTime(&hours,&minutes,&seconds);
+			enviar_hora(hours, minutes, seconds);
 			miestado=espera;
 		}
 		else if(dato_recibido==SET_FECHA){
@@ -155,7 +160,11 @@ ISR(USART0_RX_vect)
 			SetTimeDate(buffer_trama[0],buffer_trama[1],buffer_trama[2],buffer_trama[3],buffer_trama[4],buffer_trama[5]);//año-mes-dia-hora-minuto-segundo
 			byte hours, minutes, seconds,months, days, years;
 			
-			DS1307_GetDate(&months,&days,&years);			enviar_fecha(months, days, years);						DS1307_GetTime(&hours,&minutes,&seconds);			enviar_hora(hours, minutes, seconds);
+			DS1307_GetDate(&months,&days,&years);
+			enviar_fecha(months, days, years);
+			
+			DS1307_GetTime(&hours,&minutes,&seconds);
+			enviar_hora(hours, minutes, seconds);
 			
 		}
 		
