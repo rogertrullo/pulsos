@@ -69,61 +69,6 @@ void stop_timer3()
 	TCCR3B=0;
 }
 
-/*ISR(INT2_vect)
-{
-	
-	
-	//enviar_0(dato2,1);
-	ATOMIC_BLOCK (ATOMIC_FORCEON){
-	
-	if(en_cuenta_out==0){
-		en_cuenta_out=1;
-		pulsos_out++;
-		start_timer1();		
-		
-	}
-	else{
-		pulsos_out++;
-		stop_timer1();
-		start_timer1();
-		
-		
-	}
-	
-	
-	enviar_0((char *)&pulsos_out,NUM_BYTES_PULSOS);
-	//itoa((int)pulsos_out,buffer,10);   // here 10 means decimal
-	//sprintf(buffer, "%d", x);
-		//enviar_0(buffer,2);
-	//Serial_Print_String(buffer);
-	}
-}
-
-
-ISR(INT3_vect)
-{
-	
-	ATOMIC_BLOCK (ATOMIC_FORCEON){
-	//enviar_0(dato3,5);
-	if(en_cuenta_in==0){
-		en_cuenta_in=1;
-		pulsos_in++;
-		start_timer3();
-		
-	}
-	else{
-		pulsos_in++;
-		stop_timer3();
-		start_timer3();
-		
-		
-	}
-	
-	enviar_0((char *)&pulsos_in,NUM_BYTES_PULSOS);
-	}
-	
-	
-}*/
 
 ISR ( TIMER1_COMPA_vect )
 {
