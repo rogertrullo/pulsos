@@ -47,12 +47,9 @@ void enviar_0(char * buffer,int longitud)
 	
 }
 
-<<<<<<< HEAD
-////////////////////////////Interrupcion serial//////////////
-=======
 
 /////////////////////////INT SERIAL///////////////////////////////////
->>>>>>> branchprueba
+
 ISR(USART0_RX_vect)
 {
 	char dato_recibido=UDR0;
