@@ -44,23 +44,15 @@ void enviar_0(char * buffer,int longitud)
 		UDR0=buffer[i];
 		
 	}
-	/*PORTB=PORTB^0xFF;
-	uint32_t x=255;
-	char* y=(char *)&x;
-	for(int i=0;i<4;i++)
-	{
-		
-		while ( !( UCSR0A & (1<<UDRE)) )
-		;
-		UDR0=y[i];
-		
-	}*/
 	
-
-
 }
 
+<<<<<<< HEAD
 ////////////////////////////Interrupcion serial//////////////
+=======
+
+/////////////////////////INT SERIAL///////////////////////////////////
+>>>>>>> branchprueba
 ISR(USART0_RX_vect)
 {
 	char dato_recibido=UDR0;
